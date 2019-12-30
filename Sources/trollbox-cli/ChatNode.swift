@@ -10,11 +10,7 @@ class ChatNode {
         self.node = Node()
         node.delegate = self
 
-        var transport: Transport
-
-        #if os(macOS)
-        transport = CoreBluetoothTransport()
-        #endif
+        var transport = try! PureSwiftBluetoothTransport()
 
         node.add(transport: transport)
     }

@@ -20,7 +20,7 @@ ifneq ($(XCPRETTY_STATUS),0)
 endif
 
 clean:
-	rm -rf .build
+	rm -rf .build Package.resolved
 
 test: clean install_deps
 	set -o pipefail && swift test | $(XCPRETTY)
